@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 26938588}
+  - component: {fileID: 26938589}
   m_Layer: 0
   m_Name: Road
   m_TagString: Untagged
@@ -154,6 +155,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &26938589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26938587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a522690e0ee8e714da9941af3a849ae6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roadFragmentPrefab: {fileID: 6518537101350985026, guid: e4dc1e543cb701649a7f3e785a29f893, type: 3}
+  startPositionZ: 55
+  endPositionZ: -5
+  fragmentsSpacing: 5
 --- !u!1 &288306897
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,6 +182,7 @@ GameObject:
   - component: {fileID: 288306901}
   - component: {fileID: 288306900}
   - component: {fileID: 288306899}
+  - component: {fileID: 288306898}
   m_Layer: 0
   m_Name: Background Plane
   m_TagString: Untagged
@@ -172,6 +190,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &288306898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288306897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bb2bcd899c6cfc44867ee4eeaae5382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollSpeedRatio: 14
+  scrollMaxOffset: 10
 --- !u!23 &288306899
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -247,6 +279,7 @@ GameObject:
   - component: {fileID: 437544879}
   - component: {fileID: 437544878}
   - component: {fileID: 437544877}
+  - component: {fileID: 437544881}
   m_Layer: 0
   m_Name: Snake Head
   m_TagString: Untagged
@@ -330,6 +363,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &437544881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437544876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ae149eec3b89bc428922931a19e3c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fixedYPosition: 0.5
+  fixedZPosition: 0
+  moveSpeed: 30
 --- !u!1 &604005024
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,6 +766,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1551961516}
+  - component: {fileID: 1551961517}
   m_Layer: 0
   m_Name: Road Fragment
   m_TagString: Untagged
@@ -742,6 +791,19 @@ Transform:
   m_Father: {fileID: 26938588}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1551961517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551961515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f2d4aac887abb24c886d877ea81a69c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyPositionZ: -10
 --- !u!1 &1805416745
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,3 +887,46 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 45, y: -3.5, z: 0}
+--- !u!1 &1876892139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1876892141}
+  - component: {fileID: 1876892140}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1876892140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876892139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efddb7f2e854b3042890a4685bf02ffa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1876892141
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876892139}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
