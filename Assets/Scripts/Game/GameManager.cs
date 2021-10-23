@@ -25,7 +25,7 @@ namespace Game
             Instance = this;
             
             // TODO: temp value
-            Speed = 5f;
+            Speed = 10f;
         }
         
         #endregion

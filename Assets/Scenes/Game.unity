@@ -167,10 +167,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a522690e0ee8e714da9941af3a849ae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roadFragmentPrefab: {fileID: 6518537101350985026, guid: e4dc1e543cb701649a7f3e785a29f893, type: 3}
-  startPositionZ: 55
-  endPositionZ: -5
-  fragmentsSpacing: 5
+  startPositionZ: 49
+  endPositionZ: -7
+  fragmentsSpacing: 7
+  roadFragmentsQueue:
+  - {fileID: 6518537101350985026, guid: e4dc1e543cb701649a7f3e785a29f893, type: 3}
+  - {fileID: 6518537101350985026, guid: e4dc1e543cb701649a7f3e785a29f893, type: 3}
+  - {fileID: 8465964293387704492, guid: 27e3e8d3cfc93804f9ce8b5a9a736ed2, type: 3}
+  - {fileID: 697354617829468185, guid: 21c382fcec851844bb582524aa278ce2, type: 3}
+  - {fileID: 697354617829468185, guid: 21c382fcec851844bb582524aa278ce2, type: 3}
+  - {fileID: 8465964293387704492, guid: 27e3e8d3cfc93804f9ce8b5a9a736ed2, type: 3}
 --- !u!1 &175257607
 GameObject:
   m_ObjectHideFlags: 0

@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6518537099346162249}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4, y: 1, z: 0.5}
+  m_LocalScale: {x: 1.4, y: 1, z: 0.7}
   m_Children: []
   m_Father: {fileID: 6518537101350985029}
   m_RootOrder: 0
@@ -124,7 +124,7 @@ Transform:
   m_GameObject: {fileID: 6518537101091301827}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -6.5, y: 0.25, z: 0}
-  m_LocalScale: {x: 1, y: 0.5, z: 5}
+  m_LocalScale: {x: 1, y: 0.5, z: 7}
   m_Children: []
   m_Father: {fileID: 6518537101350985029}
   m_RootOrder: 1
@@ -219,7 +219,7 @@ Transform:
   m_GameObject: {fileID: 6518537101253170163}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 6.5, y: 0.25, z: 0}
-  m_LocalScale: {x: 1, y: 0.5, z: 5}
+  m_LocalScale: {x: 1, y: 0.5, z: 7}
   m_Children: []
   m_Father: {fileID: 6518537101350985029}
   m_RootOrder: 2
@@ -297,7 +297,7 @@ GameObject:
   - component: {fileID: 6518537101350985029}
   - component: {fileID: 7161285400538973743}
   m_Layer: 0
-  m_Name: Road Fragment
+  m_Name: Empty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -332,4 +332,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f2d4aac887abb24c886d877ea81a69c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyZPosition: -10
+  destroyPositionZ: -10

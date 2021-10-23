@@ -8,12 +8,13 @@ namespace Road
     public class RoadManager : MonoBehaviour
     {
         
-        [SerializeField] private GameObject roadFragmentPrefab;
         [SerializeField] private float startPositionZ, endPositionZ, fragmentsSpacing;
+        [SerializeField] private GameObject[] roadFragmentsQueue;
         
         public static RoadManager Instance { get; private set; }
         
         private readonly List<RoadFragment> _roadFragments = new List<RoadFragment>();
+        private byte _roadFragmentsQueueStep;
         
         #region MonoBehaviour CallBacks
 
@@ -47,25 +48,34 @@ namespace Road
         private void CreateStartRoad()
         {
             for (var i = endPositionZ; i <= startPositionZ; i += fragmentsSpacing)
-                CreateRoadFragment(i);
+                CreateQueueRoadFragment(i);
         }
         
-        private void CreateRoadFragment(float zPosition)
+        private void CreateRoadFragment(float zPosition, GameObject prefab)
         {
-            var roadFragment = Instantiate(roadFragmentPrefab, transform).GetComponent<RoadFragment>();
+            var roadFragment = Instantiate(prefab, transform).GetComponent<RoadFragment>();
             roadFragment.SetPosition(zPosition);
             roadFragment.SetSpeed(GameManager.Instance.Speed);
             
             _roadFragments.Add(roadFragment);
         }
-        
+
+        private void CreateQueueRoadFragment(float zPosition)
+        {
+            CreateRoadFragment(zPosition, roadFragmentsQueue[_roadFragmentsQueueStep]);
+            
+            _roadFragmentsQueueStep++;
+            if (_roadFragmentsQueueStep >= roadFragmentsQueue.Length)
+                _roadFragmentsQueueStep = 0;
+        }
+
         #endregion
         
         #region Interface
 
         public void CreateNewRoadFragment()
         {
-            CreateRoadFragment(_roadFragments.Last().GetPositionZ() + fragmentsSpacing);
+            CreateQueueRoadFragment(_roadFragments.Last().GetPositionZ() + fragmentsSpacing);
         }
 
         public void DestroyRoadFragment(RoadFragment fragment)
