@@ -51,7 +51,7 @@ namespace Persons
                 var newPerson = Instantiate(personPrefab, spawn, true);
                 newPerson.transform.position = spawn.position + randomSpawnRange;
                 
-                newPerson.GetComponent<PersonController>().SetGameColor(color);
+                newPerson.GetComponent<PersonController>().SetColor(color);
             }
         }
 

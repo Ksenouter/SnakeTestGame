@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,6 +21,11 @@ namespace UI
             SubscribeOnEvents();
         }
 
+        private void OnDestroy()
+        {
+            UnsubscribeFromEvents();
+        }
+
         #endregion
         
         #region Private Methods
@@ -28,6 +34,12 @@ namespace UI
         {
             Game.Events.CrystalsCountChanged.Subscribe(UpdateCrystalsCounter);
             Game.Events.KillsCountChanged.Subscribe(UpdateKillsCounter);
+        }
+
+        private void UnsubscribeFromEvents()
+        {
+            Game.Events.CrystalsCountChanged.Unsubscribe(UpdateCrystalsCounter);
+            Game.Events.KillsCountChanged.Unsubscribe(UpdateKillsCounter);
         }
 
         private void UpdateCrystalsCounter(int count)

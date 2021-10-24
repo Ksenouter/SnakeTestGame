@@ -64,7 +64,7 @@ namespace Game
         
         public void AddKills(int count = 1)
         {
-            CrystalsCount += count;
+            KillsCount += count;
         }
 
         public void ClearCrystals()

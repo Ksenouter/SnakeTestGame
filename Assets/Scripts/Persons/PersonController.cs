@@ -1,9 +1,11 @@
 using Colors;
+using Game;
+using Road.Objects;
 using UnityEngine;
 
 namespace Persons
 {
-    public class PersonController : MonoBehaviour
+    public class PersonController : MonoBehaviour, IEdibleObject
     {
 
         public GameColor CurrentColor { get; private set; }
@@ -19,15 +21,30 @@ namespace Persons
         
         #endregion
         
+        #region IEdibleObject CallBacks
+        
+        public void Eat()
+        {
+            GameManager.Instance.AddKills();
+            Destroy(gameObject);
+        }
+
+        public GameColor GetEatColor()
+        {
+            return CurrentColor;
+        }
+        
+        #endregion
+        
         #region Interface
 
-        public void SetGameColor(GameColor color)
+        public void SetColor(GameColor color)
         {
             CurrentColor = color;
             _meshRenderer.material.color = color.Color;
         }
         
         #endregion
-
+        
     }
 }
