@@ -26,6 +26,10 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Colors" t="Include">
+            <e p="ColorsManager.cs" t="Include" />
+            <e p="Events.cs" t="Include" />
+          </e>
           <e p="Editor" t="Include">
             <e p="YAMLMerge.cs" t="Include" />
           </e>
@@ -43,10 +47,15 @@
               <e p="Base64.cs" t="Include" />
             </e>
           </e>
-          <e p="Person" t="Include">
+          <e p="Persons" t="Include">
             <e p="PersonAnimation.cs" t="Include" />
+            <e p="PersonController.cs" t="Include" />
+            <e p="PersonsSpawner.cs" t="Include" />
           </e>
           <e p="Road" t="Include">
+            <e p="Objects" t="Include">
+              <e p="ColorChanger.cs" t="Include" />
+            </e>
             <e p="RoadBackground.cs" t="Include" />
             <e p="RoadFragment.cs" t="Include" />
             <e p="RoadManager.cs" t="Include" />
