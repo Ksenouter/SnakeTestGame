@@ -25,6 +25,7 @@ namespace Persons
         
         public void Eat()
         {
+            Events.PersonKilled.Publish();
             GameManager.Instance.AddKills();
             Destroy(gameObject);
         }

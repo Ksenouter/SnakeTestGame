@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5145608786225201231}
   - component: {fileID: 4482781704798738215}
   - component: {fileID: 5840499537744771987}
+  - component: {fileID: 506012047963140263}
   m_Layer: 0
   m_Name: Crystal
   m_TagString: Edible
@@ -76,6 +77,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3831536bb2ac41e4cbaf09d280c0578d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &506012047963140263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906352030098808042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fab91c3176f7b844be4ddbd2892e8bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationVector: {x: 0, y: 1, z: 0}
+  rotationSpeed: 120
 --- !u!1001 &8098645603454788149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -127,6 +142,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 5949c9dce9c97d34c87241c671fd6a52, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e065ce9cda4fa4346b67694bc2c4ab75, type: 2}
     - target: {fileID: 919132149155446097, guid: 5949c9dce9c97d34c87241c671fd6a52, type: 3}
       propertyPath: m_Name
       value: Model
