@@ -170,6 +170,8 @@ MonoBehaviour:
   startPositionZ: 49
   endPositionZ: -7
   fragmentsSpacing: 7
+  emptyRoadFragment: {fileID: 6518537101350985026, guid: e4dc1e543cb701649a7f3e785a29f893, type: 3}
+  startEmptyRoadFragments: 4
   roadFragmentsQueue:
   - {fileID: 6518537101350985026, guid: e4dc1e543cb701649a7f3e785a29f893, type: 3}
   - {fileID: 4682673700507378701, guid: a1925971f0aedcd42914578abaf7d813, type: 3}

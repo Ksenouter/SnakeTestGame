@@ -9,6 +9,8 @@ namespace Road
     {
         
         [SerializeField] private float startPositionZ, endPositionZ, fragmentsSpacing;
+        [SerializeField] private GameObject emptyRoadFragment;
+        [SerializeField] private byte startEmptyRoadFragments;
         [SerializeField] private GameObject[] roadFragmentsQueue;
         
         public static RoadManager Instance { get; private set; }
@@ -62,6 +64,13 @@ namespace Road
 
         private void CreateQueueRoadFragment(float zPosition)
         {
+            if (startEmptyRoadFragments > 0)
+            {
+                CreateRoadFragment(zPosition, emptyRoadFragment);
+                startEmptyRoadFragments--;
+                return;
+            }
+            
             CreateRoadFragment(zPosition, roadFragmentsQueue[_roadFragmentsQueueStep]);
             
             _roadFragmentsQueueStep++;
