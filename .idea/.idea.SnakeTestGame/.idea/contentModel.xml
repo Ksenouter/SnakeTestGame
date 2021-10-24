@@ -55,6 +55,7 @@
           <e p="Road" t="Include">
             <e p="Objects" t="Include">
               <e p="ColorChanger.cs" t="Include" />
+              <e p="DeadlyObject.cs" t="Include" />
             </e>
             <e p="RoadBackground.cs" t="Include" />
             <e p="RoadFragment.cs" t="Include" />
@@ -70,6 +71,7 @@
           </e>
           <e p="UI" t="Include">
             <e p="CountersPanels.cs" t="Include" />
+            <e p="GameOverPanelController.cs" t="Include" />
           </e>
         </e>
       </e>

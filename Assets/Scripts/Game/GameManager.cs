@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Game
 {
@@ -69,6 +70,18 @@ namespace Game
         public void ClearCrystals()
         {
             CrystalsCount = 0;
+        }
+
+        public void GameOver()
+        {
+            Speed = 0;
+            Events.GameOver.Publish();
+        }
+
+        public void RestartGame()
+        {
+            var currentScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(currentScene.name);
         }
         
         #endregion

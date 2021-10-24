@@ -18,6 +18,11 @@ namespace Models.Events
             foreach (var callback in _callbacks)
                 callback(value);
         }
+
+        public void Unsubscribe(Action<T> callback)
+        {
+            _callbacks.Remove(callback);
+        }
         
     }
 }

@@ -1,3 +1,4 @@
+using Game;
 using UnityEngine;
 
 namespace Snake
@@ -6,10 +7,11 @@ namespace Snake
     {
 
         [SerializeField] private float fixedYPosition, fixedZPosition;
-        [SerializeField] private float moveSpeed = 30;
+        [SerializeField] private float moveSpeed = 3;
         
         private Camera _mainCamera;
         private Vector3 _targetPosition;
+        private float _gameSpeed;
         
         private bool _inputState;
 
@@ -21,6 +23,10 @@ namespace Snake
             
             _targetPosition = new Vector3(0, fixedYPosition, fixedZPosition);
             _inputState = true;
+
+            _gameSpeed = GameManager.Instance != null ? GameManager.Instance.Speed : 0;
+
+            SubscribeOnEvents();
         }
 
         private void Update()
@@ -33,6 +39,11 @@ namespace Snake
         
         #region Private Methods
 
+        private void SubscribeOnEvents()
+        {
+            Game.Events.GameSpeedChanged.Subscribe(gameSpeed => _gameSpeed = gameSpeed);
+        }
+        
         private void GetInput()
         {
             if (!_inputState) return;
@@ -55,7 +66,7 @@ namespace Snake
         {
             if (transform.position == _targetPosition) return;
 
-            var moveTowardsSpeed = Time.deltaTime * moveSpeed;
+            var moveTowardsSpeed = Time.deltaTime * (moveSpeed * _gameSpeed);
             transform.position = Vector3.MoveTowards(transform.position, _targetPosition, moveTowardsSpeed);
         }
         
