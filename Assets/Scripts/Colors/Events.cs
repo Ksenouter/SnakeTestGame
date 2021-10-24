@@ -1,5 +1,4 @@
 using Models.Events;
-using UnityEngine;
 
 namespace Colors
 {

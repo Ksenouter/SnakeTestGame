@@ -1,4 +1,5 @@
 using Colors;
+using Snake;
 using UnityEngine;
 
 namespace Road.Objects
@@ -27,7 +28,15 @@ namespace Road.Objects
                 smokeMain.startColor = particlesColor;
             }
         }
-        
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (!other.CompareTag("Player")) return;
+            
+            var snakeElement = other.GetComponent<SnakeElement>();
+            if (snakeElement != null) snakeElement.SetColor(CurrentColor);
+        }
+
         #endregion
         
     }

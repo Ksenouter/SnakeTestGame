@@ -62,6 +62,7 @@
           </e>
           <e p="Snake" t="Include">
             <e p="MoveToTouch.cs" t="Include" />
+            <e p="SnakeElement.cs" t="Include" />
             <e p="Tail" t="Include">
               <e p="SnakeTailController.cs" t="Include" />
               <e p="SnakeTailElement.cs" t="Include" />

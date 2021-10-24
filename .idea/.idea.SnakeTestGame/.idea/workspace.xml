@@ -23,12 +23,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SnakeTestGame/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SnakeTestGame/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SnakeTestGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SnakeTestGame/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Road/Fragments/Color Changer Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Road/Fragments/Color Changer Variant.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Road/Fragments/Persons Variant.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Road/Fragments/Persons Variant.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Road/Objects/Person.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Road/Objects/Person.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Person.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Person/PersonAnimation.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Person/PersonAnimation.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Snake Tail.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Snake Tail.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Colors/Events.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Colors/Events.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Road/Objects/ColorChanger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Road/Objects/ColorChanger.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +42,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Road/RoadBackground.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Colors/Events.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Snake/SnakeElement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Persons/PersonController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Persons/PersonAnimation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../BumSimulator/Assets/Scripts/Models/Protection/Base64.cs" root0="SKIP_HIGHLIGHTING" />
@@ -70,12 +69,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Person/PersonAnimation.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Colors/ColorsController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Colors/Events.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Road/Objects/ColorChanger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Colors/ColorsManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Persons/PersonAnimation.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Persons/PersonController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Persons/PersonsSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Colors/Events.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Snake/SnakeElement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Road/Objects/ColorChanger.cs" />
       </list>
     </option>
   </component>
@@ -120,7 +120,7 @@
       <updated>1634894332857</updated>
       <workItem from="1634894346585" duration="19360000" />
       <workItem from="1635002459354" duration="3804000" />
-      <workItem from="1635065460180" duration="11370000" />
+      <workItem from="1635065460180" duration="12969000" />
     </task>
     <servers />
   </component>
