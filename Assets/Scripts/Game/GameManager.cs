@@ -5,6 +5,8 @@ namespace Game
     public class GameManager : MonoBehaviour
     {
 
+        [SerializeField] private int crystalsRate = 10;
+        
         public static GameManager Instance { get; private set; }
 
         private float _speed;
@@ -18,6 +20,28 @@ namespace Game
             }
         }
         
+        private int _crystalsCount;
+        public int CrystalsCount
+        {
+            get => _crystalsCount;
+            private set
+            {
+                _crystalsCount = value;
+                Events.CrystalsCountChanged.Publish(value);
+            }
+        }
+        
+        private int _killsCount;
+        public int KillsCount
+        {
+            get => _killsCount;
+            private set
+            {
+                _killsCount = value;
+                Events.KillsCountChanged.Publish(value);
+            }
+        }
+        
         #region MonoBehaviour CallBacks
 
         private void Awake()
@@ -26,6 +50,25 @@ namespace Game
             
             // TODO: temp value
             Speed = 10f;
+        }
+        
+        #endregion
+        
+        #region Interface
+
+        public void AddCrystals(int count = 1)
+        {
+            CrystalsCount += count * crystalsRate;
+        }
+        
+        public void AddKills(int count = 1)
+        {
+            CrystalsCount += count;
+        }
+
+        public void ClearCrystals()
+        {
+            CrystalsCount = 0;
         }
         
         #endregion
