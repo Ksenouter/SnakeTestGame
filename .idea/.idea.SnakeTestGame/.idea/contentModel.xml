@@ -61,6 +61,7 @@
               <e p="ColorChanger.cs" t="Include" />
               <e p="DeadlyObject.cs" t="Include" />
               <e p="IEdibleObject.cs" t="Include" />
+              <e p="MineController.cs" t="Include" />
               <e p="RoadCrystal.cs" t="Include" />
             </e>
             <e p="RoadBackground.cs" t="Include" />
@@ -70,6 +71,7 @@
           <e p="Snake" t="Include">
             <e p="MoveToTouch.cs" t="Include" />
             <e p="SnakeElement.cs" t="Include" />
+            <e p="SnakeFever.cs" t="Include" />
             <e p="SnakeMouth.cs" t="Include" />
             <e p="Tail" t="Include">
               <e p="SnakeTailController.cs" t="Include" />

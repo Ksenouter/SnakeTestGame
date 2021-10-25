@@ -93,6 +93,11 @@ namespace Snake
             _targetPosition = targetPosition;
         }
         
+        public void SetXTargetPosition(float xPosition)
+        {
+            _targetPosition.x = xPosition;
+        }
+        
         #endregion
 
         private const int CameraRaycastDistance = 100;

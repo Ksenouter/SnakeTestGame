@@ -15,11 +15,23 @@ namespace Snake
         private void Awake()
         {
             _meshRenderer = GetComponent<MeshRenderer>();
+            UpdateColor();
         }
-        
+
         private void Start()
         {
-            SetColor(ColorsManager.Instance.CurrentColor);
+            if (CurrentColor == null)
+                SetColor(ColorsManager.Instance.CurrentColor);
+        }
+        
+        #endregion
+        
+        #region Private Methods
+
+        private void UpdateColor()
+        {
+            if (CurrentColor != null && _meshRenderer != null)
+                _meshRenderer.material.color = CurrentColor.Color;
         }
         
         #endregion
@@ -29,7 +41,7 @@ namespace Snake
         public void SetColor(GameColor color)
         {
             CurrentColor = color;
-            _meshRenderer.material.color = color.Color;
+            UpdateColor();
         }
         
         #endregion

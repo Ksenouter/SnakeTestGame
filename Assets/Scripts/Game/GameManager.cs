@@ -10,6 +10,8 @@ namespace Game
         [SerializeField] private int crystalsRate = 10;
 
         public static GameManager Instance { get; private set; }
+        
+        public bool GodMode { get; private set;  }
 
         private float _speed;
         public float Speed
@@ -75,6 +77,8 @@ namespace Game
 
         public void GameOver()
         {
+            if (GodMode) return;
+            
             Speed = 0;
             Events.GameOver.Publish();
         }
@@ -84,7 +88,27 @@ namespace Game
             var currentScene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(currentScene.name);
         }
+
+        public void MultiplySpeed(float value)
+        {
+            Speed *= value;
+        }
         
+        public void DivideSpeed(float value)
+        {
+            Speed /= value;
+        }
+
+        public void ActivateGodMode()
+        {
+            GodMode = true;
+        }
+
+        public void DeactivateGodMode()
+        {
+            GodMode = false;
+        }
+
         #endregion
 
         private const int TargetFrameRate = 60;

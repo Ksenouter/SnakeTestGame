@@ -81,6 +81,12 @@ namespace Snake.Tail
                 tailElement.SetMoveSpeed(tailSpeed);
             }
 
+            if (tailElements >= startTailElementsCount)
+            {
+                var parentColor = tailTargetElement.GetComponent<SnakeElement>().CurrentColor;
+                tailElement.GetComponent<SnakeElement>().SetColor(parentColor);
+            }
+
             _tailElements.Add(tailElement);
         }
         
