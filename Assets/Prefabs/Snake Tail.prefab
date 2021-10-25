@@ -111,10 +111,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fixedYPosition: 0.75
-  moveSpeed: 2.5
-  minMoveSpeed: 2
+  moveSpeed: 1.6
+  minMoveSpeed: 0.5
   maxMoveSpeed: 3
-  targetZPositionBias: -1
+  targetZLimitation: 0.78
 --- !u!114 &-6662134266960168656
 MonoBehaviour:
   m_ObjectHideFlags: 0

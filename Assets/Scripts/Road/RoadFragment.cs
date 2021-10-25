@@ -5,15 +5,16 @@ namespace Road
     public class RoadFragment : MonoBehaviour
     {
 
+        [SerializeField] private float gameSpeedMultiplier = 1;
         [SerializeField] private float destroyPositionZ = -10;
         
         private float _currentSpeed;
         
         #region MonoBehavior CallBacks
-
-        private void Update()
+        
+        private void FixedUpdate()
         {
-            transform.Translate(Vector3.back * (Time.deltaTime * _currentSpeed));
+            transform.Translate(Vector3.back * _currentSpeed * Time.fixedDeltaTime);
         }
 
         private void LateUpdate()
@@ -35,7 +36,7 @@ namespace Road
 
         public void SetSpeed(float newSpeed)
         {
-            _currentSpeed = newSpeed;
+            _currentSpeed = newSpeed * gameSpeedMultiplier;
         }
 
         public float GetPositionZ()

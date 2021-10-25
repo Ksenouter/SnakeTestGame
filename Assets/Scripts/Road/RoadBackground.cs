@@ -14,7 +14,7 @@ namespace Road
         private Material _material;
         private Vector2 _offsetVector;
         
-        private float _scrollSpeed = 5;
+        private float _gameSpeed;
         
         #region MonoBehaviour CallBacks
 
@@ -22,18 +22,15 @@ namespace Road
         {
             _material = GetComponent<Renderer>().material;
             _offsetVector = new Vector2();
-
+            
+            _gameSpeed = GameManager.Instance != null ? GameManager.Instance.Speed : 0;
+            
             SubscribeOnEvents();
         }
-
-        private void Start()
+        
+        private void FixedUpdate()
         {
-            _scrollSpeed = GameManager.Instance.Speed;
-        }
-
-        private void Update()
-        {
-            _offsetVector.y -= Time.deltaTime / scrollSpeedRatio * _scrollSpeed;
+            _offsetVector.y -= scrollSpeedRatio * _gameSpeed * Time.fixedDeltaTime;
             if (_offsetVector.y < 0) _offsetVector.y += scrollMaxOffset;
             
             _material.SetTextureOffset(MainTex, _offsetVector);
@@ -45,7 +42,7 @@ namespace Road
 
         private void SubscribeOnEvents()
         {
-            Game.Events.GameSpeedChanged.Subscribe(gameSpeed => _scrollSpeed = gameSpeed);
+            Game.Events.GameSpeedChanged.Subscribe(gameSpeed => _gameSpeed = gameSpeed);
         }
         
         #endregion

@@ -29,23 +29,22 @@ namespace Snake.Tail
 
         private void CreateTailElement()
         {
+            var tailElements = _tailElements.Count;
+            
             var tailZPosition = (startTailBias + _tailElements.Count * tailBias) * -1;
             var tailTargetElement = _tailElements.Count == 0 ? snakeHead : _tailElements.Last().transform;
             var tailPosition = tailTargetElement.position;
             tailPosition.z = tailZPosition;
-
+            
             var tailObject = Instantiate(tailPrefab, tailPosition, Quaternion.identity, tailParent);
             var tailElement = tailObject.GetComponent<SnakeTailElement>();
             tailElement.SetTargetElement(tailTargetElement);
+            tailElement.SetTargetPositionZBias(tailElements == 0 ? startTailBias : tailBias);
 
-            if (tailSpeedBias != 0)
+            if (tailSpeedBias != 0 && tailElements > 1)
             {
-                var tailElements = _tailElements.Count;
-                if (tailElements > 1)
-                {
-                    var tailSpeed = _tailElements[tailElements - 2].GetMoveSpeed() + tailSpeedBias;
-                    tailElement.SetMoveSpeed(tailSpeed);
-                }
+                var tailSpeed = _tailElements[tailElements - 2].GetMoveSpeed() + tailSpeedBias;
+                tailElement.SetMoveSpeed(tailSpeed);
             }
 
             _tailElements.Add(tailElement);
