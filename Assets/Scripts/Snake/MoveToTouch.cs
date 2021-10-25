@@ -1,4 +1,3 @@
-using System;
 using Game;
 using UnityEngine;
 
@@ -62,7 +61,7 @@ namespace Snake
             #endif
             
             var cameraRay = _mainCamera.ScreenPointToRay(inputPosition);
-            if (!Physics.Raycast(cameraRay, out var hit)) return;
+            if (!Physics.Raycast(cameraRay, out var hit, CameraRaycastDistance, CameraRaycastLayerMask)) return;
             
             _targetPosition.x = hit.point.x;
         }
@@ -95,6 +94,9 @@ namespace Snake
         }
         
         #endregion
-        
+
+        private const int CameraRaycastDistance = 100;
+        private const int CameraRaycastLayerMask = 1 << 3;
+
     }
 }
