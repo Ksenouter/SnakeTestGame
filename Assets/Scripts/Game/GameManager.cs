@@ -6,8 +6,9 @@ namespace Game
     public class GameManager : MonoBehaviour
     {
 
+        [SerializeField] private float startGameSpeed = 10;
         [SerializeField] private int crystalsRate = 10;
-        
+
         public static GameManager Instance { get; private set; }
 
         private float _speed;
@@ -47,10 +48,10 @@ namespace Game
 
         private void Awake()
         {
-            Instance = this;
+            Application.targetFrameRate = TargetFrameRate;
             
-            // TODO: temp value
-            Speed = 10f;
+            Instance = this;
+            Speed = startGameSpeed;
         }
         
         #endregion
@@ -85,6 +86,8 @@ namespace Game
         }
         
         #endregion
-        
+
+        private const int TargetFrameRate = 60;
+
     }
 }

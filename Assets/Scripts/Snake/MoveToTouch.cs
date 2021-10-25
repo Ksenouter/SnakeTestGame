@@ -1,3 +1,4 @@
+using System;
 using Game;
 using UnityEngine;
 
@@ -32,6 +33,10 @@ namespace Snake
         private void Update()
         {
             GetInput();
+        }
+
+        private void FixedUpdate()
+        {
             MoveToTargetPosition();
         }
 
@@ -65,8 +70,8 @@ namespace Snake
         private void MoveToTargetPosition()
         {
             if (transform.position == _targetPosition) return;
-
-            var moveTowardsSpeed = Time.deltaTime * (moveSpeed * _gameSpeed);
+            
+            var moveTowardsSpeed = Time.fixedDeltaTime * (moveSpeed * _gameSpeed);
             transform.position = Vector3.MoveTowards(transform.position, _targetPosition, moveTowardsSpeed);
         }
         

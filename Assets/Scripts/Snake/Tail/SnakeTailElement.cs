@@ -1,3 +1,4 @@
+using Game;
 using UnityEngine;
 
 namespace Snake.Tail
@@ -11,6 +12,7 @@ namespace Snake.Tail
         
         private Transform _target;
         private Vector3 _targetPosition;
+        private float _gameSpeed;
         
         #region MonoBehaviour CallBacks
 
@@ -18,9 +20,13 @@ namespace Snake.Tail
         {
             _targetPosition = transform.position;
             _targetPosition.y = fixedYPosition;
+            
+            _gameSpeed = GameManager.Instance != null ? GameManager.Instance.Speed : 0;
+            
+            SubscribeOnEvents();
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             MoveToTarget();
         }
@@ -28,14 +34,20 @@ namespace Snake.Tail
         #endregion
         
         #region Private Methods
-
+        
+        private void SubscribeOnEvents()
+        {
+            Game.Events.GameSpeedChanged.Subscribe(gameSpeed => _gameSpeed = gameSpeed);
+        }
+        
         private void MoveToTarget()
         {
             _targetPosition = _target.TransformPoint(new Vector3(0, 0, targetZPositionBias));
             _targetPosition.y = fixedYPosition;
             
             transform.LookAt(_target.position);
-            transform.position = Vector3.Lerp(transform.position, _targetPosition, Time.deltaTime * moveSpeed);
+            var timeMoveSpeed = moveSpeed * _gameSpeed * Time.fixedDeltaTime;
+            transform.position = Vector3.Lerp(transform.position, _targetPosition, timeMoveSpeed);
         }
         
         #endregion
