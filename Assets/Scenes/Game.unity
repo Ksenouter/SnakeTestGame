@@ -355,6 +355,8 @@ MonoBehaviour:
   tailBias: 1
   tailSpeedBias: -0.06
   startTailElementsCount: 3
+  maxTailElements: 7
+  tailNeedKills: 4
 --- !u!4 &175257609
 Transform:
   m_ObjectHideFlags: 0

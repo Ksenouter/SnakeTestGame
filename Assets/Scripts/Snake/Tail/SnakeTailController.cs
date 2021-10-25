@@ -12,10 +12,18 @@ namespace Snake.Tail
         [SerializeField] private float startTailBias, tailBias;
         [SerializeField] private float tailSpeedBias;
         [SerializeField] private byte startTailElementsCount;
+        [SerializeField] private byte maxTailElements;
+        [SerializeField] private int tailNeedKills;
         
         private readonly List<SnakeTailElement> _tailElements = new List<SnakeTailElement>();
+        private int _tailKillsCounter;
         
         #region MonoBehaviour CallBacks
+
+        private void Awake()
+        {
+            SubscribeOnEvents();
+        }
 
         private void Start()
         {
@@ -23,13 +31,39 @@ namespace Snake.Tail
                 CreateTailElement();
         }
 
+        private void OnDestroy()
+        {
+            UnsubscribeFromEvents();
+        }
+
         #endregion
         
         #region Private Methods
 
+        private void SubscribeOnEvents()
+        {
+            Persons.Events.PersonKilled.Subscribe(OnPersonKilled);
+        }
+
+        private void UnsubscribeFromEvents()
+        {
+            Persons.Events.PersonKilled.Unsubscribe(OnPersonKilled);
+        }
+
+        private void OnPersonKilled()
+        {
+            if (_tailElements.Count >= maxTailElements) return;
+            
+            _tailKillsCounter++;
+            if (_tailKillsCounter < tailNeedKills) return;
+            _tailKillsCounter -= tailNeedKills;
+            CreateTailElement();
+        }
+        
         private void CreateTailElement()
         {
             var tailElements = _tailElements.Count;
+            if (tailElements >= maxTailElements) return;
             
             var tailZPosition = (startTailBias + _tailElements.Count * tailBias) * -1;
             var tailTargetElement = _tailElements.Count == 0 ? snakeHead : _tailElements.Last().transform;
